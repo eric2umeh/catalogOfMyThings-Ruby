@@ -18,7 +18,6 @@ describe Author do
   it 'should be an instance of Author class' do
     expect(@author).to be_an_instance_of(Author)
   end
-
 end
 
 describe Item do
@@ -40,6 +39,4 @@ describe Item do
     @author.add_item(@book)
     expect(@author.items).to eq([@book])
   end
-
-
 end
