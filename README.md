@@ -16,9 +16,9 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 TDD project <a name="about-project"></a>
+# 📖 Catalog Of My Things <a name="about-project"></a>
 
-TDD project is for test driven development methodology.
+Ruby group capstone - Catalog of my things: In this project, we created a console app that will help user to keep a record of different types of things you own: books, music albums, and games. The data will be stored in JSON files.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -32,7 +32,7 @@ TDD project is for test driven development methodology.
 
 ### Key Features <a name="key-features"></a>
 
-- **TDD project**
+- **Catalog Of My Things**
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
