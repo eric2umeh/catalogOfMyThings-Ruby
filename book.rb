@@ -2,6 +2,7 @@ require 'item'
 
 class Book < Item
   attr_accessor :publisher, :cover_state, :name
+  attr_reader :publish_date
 
   def initialize(name, publisher, cover_state, publish_date)
     super(name, publish_date)
