@@ -80,6 +80,11 @@ ruby main.rb
 - Twitter: [@twitterhandle](https://twitter.com/TalhaHa45039660?t=R4git6jFgsysI4xPxmN-ag&s=09)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/muhammad-talha-hanif-6b1355116)
 
+👤 **Eric Umeohabike**
+
+- GitHub: [@eric2umeh](https://github.com/eric2umeh)
+- LinkedIn: [@eric-umeohabike](https://www.linkedin.com/in/eric-umeohabike/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
