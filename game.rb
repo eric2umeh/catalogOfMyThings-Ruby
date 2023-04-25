@@ -8,4 +8,12 @@ class Game < Item
         @multiplayer = multiplayer
         @last_played_at = last_played_at
     end
+
+    def can_be_archived? 
+        if Item.can_be_archived? && @last_played_at > 2
+            return true
+        else
+            return false
+        end
+    end
 end
