@@ -24,6 +24,7 @@ class Item
   end
 
   private
+
   def can_be_archived?
     publish_year = @publish_date.year
     current_year = Date.current.year
