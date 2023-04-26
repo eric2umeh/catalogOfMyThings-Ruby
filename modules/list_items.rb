@@ -54,4 +54,11 @@ module ListItems
       Publish date: #{game.publish_date}"
     end
   end
+
+  def list_authors
+    puts 'Select the author by number:'
+    @authors.each_with_index do |author, index|
+      puts "#{index + 1}. #{author.first_name} #{author.last_name}"
+    end
+  end
 end
