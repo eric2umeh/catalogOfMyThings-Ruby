@@ -4,12 +4,14 @@ require_relative 'label'
 require_relative 'game'
 require_relative 'author'
 require_relative 'game_json'
+require_relative 'book_json'
 require 'json'
 
 class App
   include NewItem
   include ListItems
   include GameData
+  include BookData
 
   def initialize
     @books = []
@@ -28,8 +30,8 @@ class App
 
   def run
     load_game_data
-    puts '********************************'
-    puts 'Welcome to Your Catalog App!'
+    load_books_data
+    puts 'Welcome to Your App!'
     puts '********************************'
     loop do
       puts 'Please choose your option:'
@@ -51,6 +53,7 @@ class App
 
   def exit
     save_game_data
+    save_books_data
     puts '********************************'
     puts 'Thank you'
     puts '********************************'
