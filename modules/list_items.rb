@@ -1,5 +1,6 @@
 require_relative '../book'
 require_relative '../game'
+require_relative '../musicalbum'
 
 module ListItems
   def initialize
@@ -10,6 +11,7 @@ module ListItems
     puts 'which item would you like to list?'
     puts '1. List all Books'
     puts '2. List all Games'
+    puts '3. List all Music Albums'
   end
 
   def list_selected_item
@@ -19,13 +21,17 @@ module ListItems
 
     when '2'
       list_games
+
+    when '3'
+      list_music_albums
+
     else
       puts 'Invalid Selection.'
     end
   end
 
   def list_items
-    until %w[1 2].include?(@list_options)
+    until %w[1 2 3].include?(@list_options)
       list_options
       print 'Select the item by number:'
       @list_options = gets.chomp
@@ -61,6 +67,22 @@ module ListItems
     puts 'Select the author by number:'
     @authors.each_with_index do |author, index|
       puts "#{index + 1}. #{author.first_name} #{author.last_name}"
+    end
+  end
+
+  def list_music_albums
+    puts 'List of Music Albums:'
+    puts 'You have no Music Albums.' if @music_albums.empty?
+    @music_albums.each_with_index do |music_album, index|
+      puts "#{index + 1}. #{music_album.name}"
+    end
+  end
+
+  def list_genres
+    puts 'List of Genres:'
+    puts 'You have no Genres.' if @genres.empty?
+    @genres.each_with_index do |genre, index|
+      puts "#{index + 1}. #{genre.name}"
     end
   end
 end
