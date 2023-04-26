@@ -1,3 +1,22 @@
+CREATE TABLE labels (
+  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  title VARCHAR(100) NOT NULL,
+  color VARCHAR(120)
+);
+
+CREATE TABLE book (
+  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  publisher VARCHAR(100) NOT NULL,
+  cover_state VARCHAR(50) NOT NULL,
+  published_date DATE NOT NULL,
+  archived BOOLEAN,
+  label_id INT,
+  author_id INT,
+  genre_id INT,
+  CONSTRAINT book_fk
+   FOREIGN KEY(label_id) REFERENCES labels(id) ON DELETE CASCADE
+);
+
 CREATE TABLE author (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name VARCHAR(100) NOT NULL
@@ -16,23 +35,4 @@ CREATE TABLE games (
     FOREIGN KEY (label_id) REFERENCES labels (id),
     FOREIGN KEY (author_id) REFERENCES author (id),
     FOREIGN KEY (genre_id) REFERENCES genre (id)
-);
-
-CREATE TABLE labels (
-  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  title VARCHAR(100) NOT NULL,
-  color VARCHAR(120)
-);
-
-CREATE TABLE book (
-  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  publisher VARCHAR(100) NOT NULL,
-  cover_state VARCHAR(50) NOT NULL,
-  published_date DATE NOT NULL,
-  archived BOOLEAN,
-  label_id INT,
-  author_id INT,
-  genre_id INT,
-  CONSTRAINT book_fk
-   FOREIGN KEY(label_id) REFERENCES labels(id) ON DELETE CASCADE
 );
