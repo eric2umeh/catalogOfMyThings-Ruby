@@ -24,7 +24,7 @@ module NewItem
   end
 
   def create_item
-    until %w[1, 2].include?(@item_options)
+    until %w[1 2].include?(@item_options)
       item_options
       @item_options = gets.chomp
       add_selected_item

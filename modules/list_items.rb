@@ -1,5 +1,5 @@
 require_relative '../book'
-require_relative '../game.rb'
+require_relative '../game'
 
 module ListItems
   def initialize
@@ -16,7 +16,7 @@ module ListItems
     case @list_options
     when '1'
       list_books
-      
+
     when '2'
       list_games
     else
@@ -25,7 +25,7 @@ module ListItems
   end
 
   def list_items
-    until %w[1, 2].include?(@list_options)
+    until %w[1 2].include?(@list_options)
       list_options
       print 'Select the item by number:'
       @list_options = gets.chomp
