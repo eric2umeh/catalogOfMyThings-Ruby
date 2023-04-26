@@ -18,7 +18,8 @@ class App
       '1' => 'Create an Item',
       '2' => 'List all items.',
       '3' => 'List all labels.',
-      '4' => 'Exit'
+      '4' => 'List all authors.',
+      '5' => 'Exit'
     }
   end
 
