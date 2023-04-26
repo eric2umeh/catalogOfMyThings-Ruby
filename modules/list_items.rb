@@ -1,4 +1,5 @@
 require_relative '../book'
+require_relative '../game.rb'
 
 module ListItems
   def initialize
@@ -8,6 +9,7 @@ module ListItems
   def list_options
     puts 'which item would you like to list?'
     puts '1. List all Books'
+    puts '2. List all Games'
   end
 
   def list_selected_item
