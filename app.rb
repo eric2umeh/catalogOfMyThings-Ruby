@@ -1,5 +1,6 @@
 require_relative './modules/create_items.rb'
 require_relative './modules/list_items.rb'
+require_relative 'label'
 
 class App
   include NewItem
