@@ -55,6 +55,13 @@ module NewItem
     puts '********************************'
   end
 
+  def author_game
+    list_authors
+    print 'Select the author by number:'
+    author_index = gets.chomp.to_i - 1
+    @authors[author_index]
+  end
+
   def create_game
     print 'Enter the last played at (yyyy-mm-dd):'
     last_played_at = gets.chomp
