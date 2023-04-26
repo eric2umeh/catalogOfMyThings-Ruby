@@ -1,4 +1,5 @@
 require_relative '../book'
+require_relative '../game'
 
 module NewItem
   def initialize
@@ -6,8 +7,9 @@ module NewItem
   end
 
   def item_options
-    puts 'Select item would you like to create?'
+    puts 'Select item you would like to create?'
     puts '1. Add a Book'
+    puts '2. Add a Game'
   end
 
   def add_selected_item
