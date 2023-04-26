@@ -10,4 +10,12 @@ module GameData
         end
         File.write('preserve_data/game_data.json', JSON.pretty_generate(@game_data))
       end
+
+      def load_game_data
+        File.write('preserve_data/game_data.json', JSON.pretty_generate([])) unless File.exist?('preserve_data/game_data.json')
+        @game_data = JSON.parse(File.read('preserve_data/game_data.json'))
+        @game_data.each do |game|
+          @games.push(Game.new(game['multiplayer'], game['last_played_at'], game['publish_date']))
+        end
+      end
   end
