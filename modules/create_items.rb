@@ -16,6 +16,8 @@ module NewItem
     case @item_options
     when '1'
       create_book
+    when '2'
+      create_game
     else
       puts 'Invalid Selection'
     end
