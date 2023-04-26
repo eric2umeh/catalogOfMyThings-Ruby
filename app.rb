@@ -50,7 +50,7 @@ class App
   end
 
   def exit
-  save_game_data
+    save_game_data
     puts '********************************'
     puts 'Thank you'
     puts '********************************'
