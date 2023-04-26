@@ -16,6 +16,9 @@ module ListItems
     case @list_options
     when '1'
       list_books
+      
+    when '2'
+      list_games
     else
       puts 'Invalid Selection.'
     end
