@@ -1,12 +1,16 @@
 require 'json'
 require_relative 'item'
+require_relative 'genre'
 
 class MusicAlbum < Item
-  attr_accessor :artist, :on_spotify
+  attr_accessor :name, :genre, :publish_date
+  attr_reader :on_spotify
 
-  def initialize(name, description, price, artist, on_spotify)
-    super(name, description, price)
-    @artist = artist
+  DEFAULT_BOOL = false
+
+  def initialize(name, publish_date, on_spotify = DEFAULT_BOOL)
+    super(publish_date)
+    @name = name
     @on_spotify = on_spotify
   end
 
@@ -14,15 +18,5 @@ class MusicAlbum < Item
     super && @on_spotify
   end
 
-  def to_json(*args)
-    {
-      'artist' => @artist,
-      'on_spotify' => @on_spotify
-    }.to_json(*args)
-  end
-
-  def self.from_json(json)
-    data = JSON.parse(json)
-    new(data['artist'], data['on_spotify'])
-  end
+  private :can_be_archived?
 end
