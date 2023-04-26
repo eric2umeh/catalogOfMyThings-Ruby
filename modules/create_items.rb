@@ -1,5 +1,6 @@
 require_relative '../book'
 require_relative '../game'
+require_relative '../musicalbum'
 
 module NewItem
   def initialize
@@ -10,6 +11,8 @@ module NewItem
     puts 'Select item you would like to create?'
     puts '1. Add a Book'
     puts '2. Add a Game'
+    puts '3. Add a Music Album'
+    puts '4. Go Back'
   end
 
   def add_selected_item
@@ -18,13 +21,17 @@ module NewItem
       create_book
     when '2'
       create_game
+    when '3'
+      create_music_album
+    when '4'
+      go_back
     else
       puts 'Invalid Selection'
     end
   end
 
   def create_item
-    until %w[1 2].include?(@item_options)
+    until %w[1 2 3].include?(@item_options)
       item_options
       @item_options = gets.chomp
       add_selected_item
@@ -79,4 +86,34 @@ module NewItem
     puts 'Game has been created successfully!!!'
     puts '***************************************'
   end
+
+  def genre_music_album
+    list_genres
+    print 'Select the genre by number:'
+    genre_index = gets.chomp.to_i - 1
+    @genres[genre_index]
+  end
+
+  def create_music_album
+    print 'Add your Music Album\'s name:'
+    name = gets.chomp
+    print 'Published date (yyyy-mm-dd): '
+    publish_date = gets.chomp
+    print 'Is it on spotify? [y/n]: '
+    spotify = gets.chomp.downcase
+    spotify = spotify == 'y'
+    music_album = MusicAlbum.new(name, publish_date, spotify)
+    genre = genre_music_album
+    genre.add_item(music_album)
+    @music_albums << music_album
+    puts 'Music Album has been created.'
+    puts '********************************'
+  end
+
+  def go_back
+    puts "Going back to main menu..."
+    sleep(1)
+    run
+  end
+
 end
