@@ -1,6 +1,8 @@
 require_relative './modules/create_items'
 require_relative './modules/list_items'
 require_relative 'label'
+require_relative 'game'
+require_relative 'author'
 
 class App
   include NewItem
@@ -9,6 +11,8 @@ class App
   def initialize
     @books = []
     @labels = [Label.new('The great Gatsby.', 'Red'), Label.new('Terminator', 'Black')]
+    @games = []
+    @authors = [Author.new('Ermmiyas', 'Demsew'), Author.new('Abebe', 'Kebede'), Author.new('John', 'Smith')]
 
     @options = {
       '1' => 'Create an Item',
