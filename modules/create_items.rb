@@ -63,14 +63,16 @@ module NewItem
   end
 
   def create_game
-    print 'Enter the last played at (yyyy-mm-dd):'
-    last_played_at = gets.chomp
     print 'Is It multiplayer(y/n):'
     multiplayer = gets.chomp.downcase
     multiplayer = multiplayer == 'y'
+
+    print 'Enter the last played at (yyyy-mm-dd):'
+    last_played_at = gets.chomp
+
     print 'Enter the publish date (yyyy-mm-dd):'
     publish_date = gets.chomp
-    game = Game.new(last_played_at, multiplayer, publish_date)
+    game = Game.new(multiplayer, last_played_at, publish_date)
     author = author_game
     author.add_item(game)
     @games << game
