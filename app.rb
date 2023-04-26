@@ -1,6 +1,8 @@
 require_relative './modules/create_items'
 require_relative './modules/list_items'
 require_relative 'label'
+require_relative 'game'
+require_relative 'author'
 
 class App
   include NewItem
@@ -9,16 +11,20 @@ class App
   def initialize
     @books = []
     @labels = [Label.new('The great Gatsby.', 'Red'), Label.new('Terminator', 'Black')]
+    @games = []
+    @authors = [Author.new('Ermmiyas', 'Demsew'), Author.new('Abebe', 'Kebede'), Author.new('John', 'Smith')]
 
     @options = {
       '1' => 'Create an Item',
       '2' => 'List all items.',
       '3' => 'List all labels.',
-      '4' => 'Exit'
+      '4' => 'List all authors.',
+      '5' => 'Exit'
     }
   end
 
   def run
+    puts '********************************'
     puts 'Welcome to Your Catalog App!'
     puts '********************************'
     loop do
@@ -31,7 +37,8 @@ class App
       when '1' then create_item
       when '2' then list_items
       when '3' then list_labels
-      when '4' then exit
+      when '4' then list_authors
+      when '5' then exit
       else
         puts 'Invalid option.'
       end
