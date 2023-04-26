@@ -111,9 +111,8 @@ module NewItem
   end
 
   def go_back
-    puts "Going back to main menu..."
+    puts 'Going back to main menu...'
     sleep(1)
     run
   end
-
 end
