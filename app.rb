@@ -24,6 +24,7 @@ class App
   end
 
   def run
+    puts '********************************'
     puts 'Welcome to Your Catalog App!'
     puts '********************************'
     loop do
@@ -36,7 +37,8 @@ class App
       when '1' then create_item
       when '2' then list_items
       when '3' then list_labels
-      when '4' then exit
+      when '4' then list_authors
+      when '5' then exit
       else
         puts 'Invalid option.'
       end
