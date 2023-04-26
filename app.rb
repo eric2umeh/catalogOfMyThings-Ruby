@@ -1,95 +1,47 @@
+require_relative './modules/create_items'
+require_relative './modules/list_items'
+require_relative 'label'
+
 class App
+  include NewItem
+  include ListItems
+
   def initialize
-    @options = [
-      'List all books',
-      'List all music albums',
-      'List all games',
-      'List all genres',
-      'List all labels',
-      'List all authors',
-      'Add a book',
-      'Add a music album',
-      'Add a game',
-      'Exit'
-    ]
+    @books = []
+    @labels = [Label.new('The great Gatsby.', 'Red'), Label.new('Terminator', 'Black')]
+
+    @options = {
+      '1' => 'Create an Item',
+      '2' => 'List all items.',
+      '3' => 'List all labels.',
+      '4' => 'Exit'
+    }
   end
 
   def run
-    puts 'Welcome Catalog of my things app!'
-    puts 'Please choose an option: [1-10]'
-
-    @options.each_with_index do |option, index|
-      puts "#{index + 1}. #{option}"
-    end
-    user_input
-  end
-
-  def user_input
-    user_option = gets.chomp.to_i
-    operation(user_option)
-  end
-
-  def operation(user_option)
-    case user_option
-    when 1 then list_all_books
-    when 2 then list_all_music_albums
-    when 3 then list_all_games
-    when 4 then list_all_genres
-    when 5 then list_all_labels
-    when 6 then list_all_authors
-    else operation_two(user_option)
+    puts 'Welcome to Your Catalog App!'
+    puts '********************************'
+    loop do
+      puts 'Please choose your option:'
+      @options.each do |key, value|
+        puts "#{key}. #{value}"
+      end
+      option = gets.chomp
+      case option
+      when '1' then create_item
+      when '2' then list_items
+      when '3' then list_labels
+      when '4' then exit
+      else
+        puts 'Invalid option.'
+      end
     end
   end
 
-  def operation_two(user_option)
-    case user_option
-    when 7 then add_book
-    when 8 then add_music_album
-    when 9 then add_game
-    when 10 then exit_app
-    else
-      puts 'Invalid option'
-    end
-  end
-
-  def list_all_books
-    # TODOs
-  end
-
-  def list_all_music_albums
-    # TODOs
-  end
-
-  def list_all_games
-    # TODO
-  end
-
-  def list_all_genres
-    # TODOs
-  end
-
-  def list_all_labels
-    # TODOs
-  end
-
-  def list_all_authors
-    # TODOs
-  end
-
-  def add_book
-    # TODOs
-  end
-
-  def add_music_album
-    # TODOs
-  end
-
-  def add_game
-    # TODOs
-  end
-
-  def exit_app
-    puts 'Thank you for using the app'
-    exit
+  def exit
+    puts '********************************'
+    puts 'Thank you'
+    puts '********************************'
+    Kernel.exit
   end
 end
