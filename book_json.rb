@@ -12,7 +12,10 @@ module BookData
   end
 
   def load_books_data
-    File.write('preserve_data/book_data.json', JSON.pretty_generate([])) unless File.exist?('preserve_data/book_data.json')
+    unless File.exist?('preserve_data/book_data.json')
+      File.write('preserve_data/book_data.json',
+                 JSON.pretty_generate([]))
+    end
     JSON.parse(File.read('preserve_data/book_data.json')).map do |book_album|
       @books << Book.new(book_album['publisher'], book_album['cover_state'], book_album['publish_date'])
     end

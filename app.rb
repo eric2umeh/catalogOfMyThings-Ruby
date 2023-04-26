@@ -31,8 +31,7 @@ class App
   def run
     load_game_data
     load_books_data
-    puts '********************************'
-    puts 'Welcome to Your Catalog App!'
+    puts 'Welcome to Your App!'
     puts '********************************'
     loop do
       puts 'Please choose your option:'
