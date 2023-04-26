@@ -48,6 +48,8 @@ module ListItems
   end
 
   def list_games
+    puts 'List of Games: '
+    puts 'Are empty. Sorry!!!!' if @games.empty?
     @games.each_with_index do |game, index|
       puts "#{index + 1} Multiplayer: #{game.multiplayer},
       Last played at: #{game.last_played_at},
