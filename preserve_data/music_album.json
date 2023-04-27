@@ -1,0 +1,12 @@
+[
+  {
+    "name": "a music album",
+    "publish_date": "1999-05-01",
+    "on_spotify": false
+  },
+  {
+    "name": "Classical songs",
+    "publish_date": "1999-02-20",
+    "on_spotify": true
+  }
+]
