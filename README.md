@@ -4,6 +4,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+- [🚀 Video Demo ](#-video-demo-)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -18,7 +19,7 @@
 
 # 📖 Catalog Of My Things <a name="about-project"></a>
 
-Ruby group capstone - Catalog of my things: In this project, we created a console app that will help user to keep a record of different types of things you own: books, music albums, and games. The data will be stored in JSON files.
+Catalog of my things: In this project, we created a console app that will help user to keep a record of different types of things you own: books, music albums, and games. The data will be stored in JSON files. It also includes a schema file with tables of the classes in the app.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -32,7 +33,18 @@ Ruby group capstone - Catalog of my things: In this project, we created a consol
 
 ### Key Features <a name="key-features"></a>
 
-- **Catalog Of My Things**
+- **Add books, music albums and games**
+- **List all books, labels, music albums, genres, games & authors**
+- **Data preserved in json file**
+- **Schema file with tables of the classes in the app**
+
+<!-- video DEMO -->
+
+## 🚀 Video Demo <a name="video-demo"></a>
+
+- [Video Presentation]()
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -48,18 +60,26 @@ In order to run this project you need:
 
 Clone the repo, and install the dependencies
 
+```sh
+  cd your-folder
+  https://github.com/eric2umeh/catalogOfMyThings-Ruby.git
+```
+
 ### Install
 
 Install this project with:
 
 ```sh
-bundle
+- Linters
+- Install bundle
+- Rubocop
 ```
 
 ### Usage
 
 To run the project, execute the following command:
 
+- To run the app
 ```sh
 ruby main.rb
 ```
@@ -89,7 +109,7 @@ ruby main.rb
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Check more codes**
+- [ ] **add movie to the app**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -97,7 +117,7 @@ ruby main.rb
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/The-Normal-One1/TDD_Project/issues).
+Feel free to check the [issues page](https://github.com/eric2ume/catalogOfMyThings-Ruby/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
