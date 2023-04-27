@@ -42,7 +42,7 @@ Catalog of my things: In this project, we created a console app that will help u
 
 ## 🚀 Video Demo <a name="video-demo"></a>
 
-- [Video Presentation]()
+- [Video Presentation](https://drive.google.com/file/d/1bRKJuKTD-TXDjgJA6OC0_a2HDEbcB5RE/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
